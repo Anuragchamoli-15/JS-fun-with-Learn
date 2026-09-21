@@ -74,24 +74,45 @@ btn.forEach((btn) => {
         p.innerText = perfectOriginal + " is not a Perfect  Number";
       }
     }
+
+    if(btn.innerText === "Fibonacci Series"){
+      let num = Number(inp1.value)
+      let x = 0;
+      let y = 1;
+      let z = 1
+      let arr = []
+
+      while (z < num){
+       z = x+y;
+        x = y;
+        y = z
+
+        if ( z <= 10){
+          arr.push(z)
+        }
+      }
+      resultInp.value = arr
+
+      let x2 = 0;
+      let y2 = 1;
+      let z2 = 0
+      let arr2 = []
+      for (let i = 0; i <= num; i++){
+
+        z2 = x2+y2;
+        x2 = y2;
+        y2 = z2
+        arr2.push(z2)
+      }
+      p.innerText = arr2 + " is  Fibonacci Series for " + num + " disit";
+
+
+
+
+
+    }
   });
 });
+ 
 
-// *****************perfect Number
-let perfectNum = 28;
-let nums = 0;
-let sum = 0;
-let perfectOriginal = perfectNum;
-
-for (let i = 1; i < perfectNum; i++) {
-  if (perfectNum % i === 0) {
-    nums = i;
-    sum = nums + sum;
-  }
-}
-
-if (perfectOriginal === sum) {
-  console.log("sum is perfect of " + perfectOriginal);
-} else {
-  console.log("sum is not perfect of " + perfectOriginal);
-}
+ 
