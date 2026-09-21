@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #080b14;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+/* Main Container */
+.container {
+    width: 90%;
+    max-width: 900px;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    background: rgba(15, 20, 35, 0.9);
+    border: 1px solid #263451;
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.15),
+        inset 0 0 25px rgba(0, 255, 255, 0.03);
+}
+
+
+/* =========================
+   NUMBER LISTS
+========================= */
+
+.numberLists {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.numberBox {
+    padding: 20px;
+
+    background: #0b1020;
+    border: 1px solid #29415c;
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.numberBox:hover {
+    border-color: #00f7ff;
+
+    box-shadow:
+        0 0 12px rgba(0, 247, 255, 0.25);
+
+    transform: translateY(-3px);
+}
+
+.numberBox h2 {
+    margin-bottom: 12px;
+
+    color: #00f7ff;
+    font-size: 18px;
+}
+
+.numberBox p {
+    color: #b9c7d8;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+
+/* =========================
+   INPUT + BUTTON SECTION
+========================= */
+
+.armstrongNumber {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+/* Inputs */
+.armstrongNumber input {
+    width: 100%;
+    padding: 15px 18px;
+
+    background: #0b1020;
+    color: #00f7ff;
+
+    border: 1px solid #29415c;
+    border-radius: 10px;
+
+    font-size: 17px;
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.armstrongNumber input:focus {
+    border-color: #00f7ff;
+
+    box-shadow:
+        0 0 12px rgba(0, 247, 255, 0.35);
+}
+
+
+/* Result */
+.armstrongNumber > p {
+    height: 100px;
+    padding: 12px;
+
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    background: #0a0f1c;
+    border-radius: 10px;
+    border: none;
+
+    color: #7dff9b;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: center;
+
+    /* scrollbar hide */
+    scrollbar-width: none;
+}
+
+.armstrongNumber > p::-webkit-scrollbar {
+    display: none;
+}
+
+ 
+
+/* Buttons */
+.armstrongNumber button {
+    padding: 14px;
+
+    border: 1px solid #00f7ff;
+    border-radius: 10px;
+
+    background: transparent;
+    color: #00f7ff;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.armstrongNumber button:hover {
+    background: #00f7ff;
+    color: #080b14;
+
+    box-shadow:
+        0 0 10px #00f7ff,
+        0 0 25px rgba(0, 247, 255, 0.5);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 20px 0;
+    }
+
+    .container {
+        width: 92%;
+        padding: 20px;
+    }
+
+    .numberLists {
+        grid-template-columns: 1fr;
+    }
+
+    .numberBox h2 {
+        font-size: 17px;
+    }
+}
