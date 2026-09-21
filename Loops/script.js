@@ -9,14 +9,13 @@ btn.forEach((btn) => {
   btn.addEventListener("click", () => {
     if (btn.innerText === "Armstrong Number") {
       let num2 = Number(inp1.value);
-      let length = num2.toString().length
+      let length = num2.toString().length;
       let newNum2 = 0;
       let result = 0;
       let original2 = num2;
 
       while (num2 > 0) {
         newNum2 = num2 % 10;
-
 
         result = newNum2 ** length + result;
         num2 = parseInt(num2 / 10);
@@ -54,65 +53,79 @@ btn.forEach((btn) => {
       let perfectNum = Number(inp1.value);
       let nums = 0;
       let sum = 0;
-      let divisor = []
+      let divisor = [];
       let perfectOriginal = perfectNum;
 
       for (let i = 1; i < perfectNum; i++) {
         if (perfectNum % i === 0) {
           nums = i;
-          divisor.push(i)
+          divisor.push(i);
           sum = nums + sum;
         }
       }
 
       resultInp.value = sum;
-      console.log(divisor)
+      console.log(divisor);
 
       if (perfectOriginal === sum) {
-        p.innerText = perfectOriginal + " is a Perfect  Number its divisor is " + divisor;
+        p.innerText =
+          perfectOriginal + " is a Perfect  Number its divisor is " + divisor;
       } else {
         p.innerText = perfectOriginal + " is not a Perfect  Number";
       }
     }
 
-    if(btn.innerText === "Fibonacci Series"){
-      let num = Number(inp1.value)
+    if (btn.innerText === "Fibonacci Series") {
+      let num = Number(inp1.value);
       let x = 0;
       let y = 1;
-      let z = 1
-      let arr = []
+      let z = 1;
+      let arr = [];
 
-      while (z < num){
-       z = x+y;
+      while (z < num) {
+        z = x + y;
         x = y;
-        y = z
+        y = z;
 
-        if ( z <= 10){
-          arr.push(z)
+        if (z <= 10) {
+          arr.push(z);
         }
       }
-      resultInp.value = arr
+      resultInp.value = arr;
 
       let x2 = 0;
       let y2 = 1;
-      let z2 = 0
-      let arr2 = []
-      for (let i = 0; i <= num; i++){
-
-        z2 = x2+y2;
+      let z2 = 0;
+      let arr2 = [];
+      for (let i = 0; i <= num; i++) {
+        z2 = x2 + y2;
         x2 = y2;
-        y2 = z2
-        arr2.push(z2)
+        y2 = z2;
+        arr2.push(z2);
       }
       p.innerText = arr2 + " is  Fibonacci Series for " + num + " disit";
+    }
 
+    if (btn.innerText === "Strong Number") {
+      let num = Number(inp1.value);
+      let sum = 1;
+      let nums = 0;
+      let result = 0;
+      let numsArr = []
 
-
-
+      while (num > 0) {
+        nums = num % 10;
+        numsArr.push(nums)
+        for (let i = 1; i <= nums; i++) {
+          sum = sum * i;
+        }
+        result = sum + result;
+        num = parseInt(num / 10);
+        sum = 1;
+      }
+      resultInp.value = result
+      p.innerText = result + " is Strong Number"
 
     }
   });
 });
- 
-
- 
